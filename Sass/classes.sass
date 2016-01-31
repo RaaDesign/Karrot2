@@ -1,0 +1,19 @@
+@import "variables.sass"
+
+=Show($width, $dir)
+  .#{$dir}-show
+    @media screen and (min-width: $width)
+      display: none
++Show($to-xs, "xs")
++Show($to-sm, "sm")
++Show($to-md, "md")
+
+
+=Hide($width, $dir)
+  .#{$dir}-hide
+    @media screen and (max-width: $width)
+      display: none
+
++Hide($to-xs, "xs")
++Hide($to-sm, "sm")
++Hide($to-md, "md")
