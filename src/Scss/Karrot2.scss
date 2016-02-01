@@ -1,0 +1,14 @@
+// compileCompressed: ../../Karrot2.min.css
+// compileExpanded: ../../Karrot2.css
+@import "normalize.scss";
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: "FontAwesome", sans-serif;
+}
+
+@import "grid.scss";
+@import "style.scss";
+@import "classes.scss";
