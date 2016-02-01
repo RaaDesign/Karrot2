@@ -1,13 +1,13 @@
 //main: Karrot2.sass
 @import "variables.sass"
 //BASE
-.container
+.container, .container-fluid
   position: relative
   width: 100%
-  max-width: 1200px
   margin: 0 auto
   box-sizing: border-box
-
+.container
+  max-width: 1200px
 //COLUMNS
 [class*="row"]
   width: 100%
@@ -18,8 +18,8 @@
   justify-content: center
   align-content: center
 
-=makeGrid($width, $dir, $cont-width)
-  @media screen and (min-width: $width)
+=makeGrid($minwidth, $dir, $cont-width)
+  @if $minwidth == 0
     .container
       width: $cont-width
     .col-#{$dir}-auto
@@ -31,6 +31,19 @@
         flex-grow: 0
       .order-#{$dir}-#{$i}
         order: #{$i}
+  @else
+    @media screen and (min-width: $minwidth)
+      .container
+        width: $cont-width
+      .col-#{$dir}-auto
+        flex-grow: 1
+        flex-basis: 0
+      @for $i from 1 through 12
+        .col-#{$dir}-#{$i}
+          flex-basis: calc(#{$i}/12*100%)
+          flex-grow: 0
+        .order-#{$dir}-#{$i}
+          order: #{$i}
 
 ////Columns Definitions
 [class^="col-"]
@@ -42,7 +55,7 @@
 [class^="col-"]
   flex-basis: 100%
 
-+makeGrid($from-xs, "xs", 100%)
++makeGrid(0, "xs", 100%)
 +makeGrid($from-sm, "sm", 95%)
 +makeGrid($from-md, "md", 85%)
 +makeGrid($from-lg, "lg", 80%)
