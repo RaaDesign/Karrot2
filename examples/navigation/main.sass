@@ -1,0 +1,51 @@
+//
+nav
+  position: fixed
+  width: 100%
+  z-index: 100
+  background: white
+  text-align: center
+  border-bottom: 1px solid transparentize(black, .7)
+  .container
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    a
+      color: black
+    .logo, span
+      font-size: 2.4rem
+      margin: 0
+      padding: 15px 20px
+    .logo span
+      font-weight: 700
+      text-transform: uppercase
+      padding: 0
+    > span
+      cursor: pointer
+    ul
+      border-top: 1px solid transparentize(black, .7)
+      flex-basis: 100%
+      display: flex
+      flex-direction: column
+      align-items: stretch
+      padding: 0
+      margin: 0
+      li
+        border-bottom: 1px solid transparentize(black, .8)
+        display: block
+        padding: 10px 10px
+        margin: 0 10px
+        &:last-of-type
+          border-bottom: 1px solid transparent
+  @media screen and (min-width: 768px)
+    position: relative
+    border-bottom: 1px solid transparentize(black, .9)
+    .container
+      ul
+        border: 0
+        flex-basis: 0
+        flex-direction: row
+        li
+          border: 0
