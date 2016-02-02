@@ -11,37 +11,24 @@
 
 [class^="btn-"]
   position: relative
-  text-transform: uppercase
-  padding: 10px 15px
+  padding: 5px 10px
   background: transparent
   transition: .5s
   overflow: hidden
   z-index: 101
-  &::before
-    content: ''
-    z-index: -1
-    position: absolute
-    width: 120%
-    left: -10%
-    height: 0
-    top: 45%
-    transform: rotate(15deg)
-    transition: .3s
+
   &:hover
     transition: .5s
-    &::before
-      transition: .3s
-      top: 0
-      height: 100%
+
 
 =makeButton($name, $clr1, $clr2)
   #{$name}
     border: 1px solid $clr1
     color: $clr1
-    &::before
-      background: $clr1
+
     &:hover
       color: $clr2
+      background: $clr1
 
 
 +makeButton(".btn-default", black, white)
