@@ -1,0 +1,53 @@
+//
+
+#buttons
+  .col-sm-6
+    padding: 50px
+  .colored
+    background: transparentize(black, .4)
+    height: 300px
+  button
+    margin: 10px
+
+[class^="btn-"]
+  position: relative
+  text-transform: uppercase
+  padding: 10px 15px
+  background: transparent
+  transition: .5s
+  overflow: hidden
+  z-index: 101
+  &::before
+    content: ''
+    z-index: -1
+    position: absolute
+    width: 120%
+    left: -10%
+    height: 0
+    top: 45%
+    transform: rotate(15deg)
+    transition: .3s
+  &:hover
+    transition: .5s
+    &::before
+      transition: .3s
+      top: 0
+      height: 100%
+
+=makeButton($name, $clr1, $clr2)
+  #{$name}
+    border: 1px solid $clr1
+    color: $clr1
+    &::before
+      background: $clr1
+    &:hover
+      color: $clr2
+
+
++makeButton(".btn-default", black, white)
++makeButton(".btn-white", white, black)
++makeButton(".btn-primary", #007BA7, white)
++makeButton(".btn-success", #5cb85c, white)
++makeButton(".btn-info", #5bc0de, white)
++makeButton(".btn-warning", #f0ad4e, white)
++makeButton(".btn-danger", #d9534f, white)
