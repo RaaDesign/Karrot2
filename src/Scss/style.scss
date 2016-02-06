@@ -156,5 +156,73 @@ a {
 }
 
 //BUTTONS
+[class^="btn-"] {
+  padding: 5px 10px;
+  transition: 0.5s;
+  min-width: 90px;
+  &:hover {
+    transition: 0.3s;
+  }
+}
+
+@mixin makeButton($name, $clr1, $clr2) {
+  .btn#{$name} {
+    border: 1px solid $clr1;
+    color: $clr1;
+    background: transparent;
+    &:hover {
+      color: $clr2;
+      background: $clr1;
+    }
+  }
+  .btn#{$name}-bg {
+    border: 1px solid $clr1;
+    background: $clr1;
+    color: $clr2;
+    &:hover {
+      background: darken($clr1, 10%);
+    }
+  }
+  .addon#{$name} {
+    color: $clr2;
+    background: $clr1;
+    height: inherit;
+    padding: 0 3px;
+    font-size: 120%;
+    min-width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@include makeButton("-default", black, white);
+
+@include makeButton("-white", white, black);
+
+@include makeButton("-primary", #007ba7, white);
+
+@include makeButton("-success", #5cb85c, white);
+
+@include makeButton("-info", #5bc0de, white);
+
+@include makeButton("-warning", #f0ad4e, white);
+
+@include makeButton("-danger", #d9534f, white);
+
+.button-group {
+  display: inline-flex;
+  box-sizing: border-box;
+}
+
+.btn-large {
+  padding: 10px 15px;
+  min-width: 180px;
+}
+
+.btn-small {
+  padding: 2px;
+  min-width: 80px;
+}
 
 //FORMS

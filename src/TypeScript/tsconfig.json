@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
         "moduleResolution": "node",
         "isolatedModules": false,
         "jsx": "react",
@@ -12,21 +11,19 @@
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true
+        "suppressImplicitAnyIndexErrors": true,
+        "out": "../../Karrot2.js"
     },
     "filesGlob": [
-        "**/*.ts",
-        "**/*.tsx",
-        "!node_modules/**"
+        "**/**/*.ts"
     ],
     "compileOnSave": true,
-    "buildOnSave": false,
+    "buildOnSave": true,
     "files": [
+        "_forms.ts",
+        "_navbar.ts",
         "Karrot2.ts",
-        "ts_libs/handlebars.d.ts",
-        "ts_libs/jquery.d.ts",
-        "ts_libs/jquery.scrollTo.d.ts",
-        "ts_libs/jqueryui.d.ts"
+        "ts_libs/jquery.d.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

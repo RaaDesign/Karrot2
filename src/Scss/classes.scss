@@ -28,3 +28,7 @@
 @include Hide($to-sm, "sm");
 
 @include Hide($to-md, "md");
+
+.hide {
+  display: none;
+}
