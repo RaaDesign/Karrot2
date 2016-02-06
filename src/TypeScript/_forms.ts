@@ -1,7 +1,8 @@
 
 interface Element {
   validationMessage:any;
-  value:any;
+  value:string;
+  setCustomValidity:any;
 }
 module Karrot2 {
   export class FormsUI{
@@ -28,11 +29,12 @@ module Karrot2 {
           }
       });
 
-      var submitButton = $("button, input[type=submit]" );
-      var inputs = $(form).children("input");
+      var submitButton = $(form).find("button:not([type=button]), input[type=submit]" );
+      var inputs = $(form).find("input");
 
-      $("input").on("click", (e) => {
-
+      document.getElementById("pass2")
+      $(inputs).on("click", (e) => {
+        console.log("raczek")
         var el = $(e.currentTarget);
         el.removeClass("error");
         el.closest(".form-group, .checkbox").children(".error-message").remove();
@@ -40,8 +42,20 @@ module Karrot2 {
       });
 
       $(submitButton).click(( event ) => {
-        var invalidFields = $(":invalid" ),
-            errorMessages = $( ".error-message" ),
+        $(form).find('[repeat]').each((id, item)=>{
+          item.setCustomValidity($(item).attr("repeatText"));
+
+          var repID = $(item).attr("repeat");
+          var repItem = <Element>document.getElementById(repID);
+          console.log(repItem);
+          if(item.value===repItem.value)
+          {
+            console.log(repItem.value);
+            item.setCustomValidity('');
+          }
+        });
+        var invalidFields = $(form).find(":invalid" ),
+            errorMessages = $(form).find( ".error-message" ),
             parent;
 
         errorMessages.each((id, item) => {
@@ -50,8 +64,6 @@ module Karrot2 {
         invalidFields.each((id, item) => {
           parent = $(item).closest(".form-group, .checkbox");
           $(parent).append( "<div class='error-message'>"+item.validationMessage+"</div>");
-          $(item).addClass("error");
-          item.value = "";
         }) ;
 
     });

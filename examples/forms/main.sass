@@ -1,34 +1,7 @@
 //form, form-inline > form-group, form-group-inline > label, input, input-group, inline-inputs
 //
-@-webkit-keyframes hide
-  0%
-    height: auto
-    opacity: 1
-  75%
-    opacity: 0
-    margin: 0
-    padding: 0
-  100%
-    height: 0
-    opacity: 0
-    margin: 0
-    padding: 0
-@-webkit-keyframes show
-  0%
-    height: 0
-    opacity: 0
-    margin: 0
-    padding: 0
-  25%
-    opacity: 0
-    margin: 0
-    padding: 0
-  100%
-    height: auto
-    opacity: 1
 
 .form, .form-inline
-  box-sizing: border-box
   margin: 0 auto
   display: flex
   align-items: stretch
@@ -36,15 +9,11 @@
   flex-direction: column
   label
     font-weight: bold
-
-  input
-    box-sizing: inherit
+  input, select
     padding: 0 10px
     height: 34px
-    flex-grow: 1
     border: 1px solid transparentize(black, .8)
   button
-    box-sizing: inherit
     margin: 5px 10px
     flex-grow: 1
 
@@ -54,13 +23,12 @@
     flex-grow: 1
     align-items: stretch
     flex-direction: column
-    box-sizing: inherit
     margin: 5px 10px
-  .input-group, .input-group-col
+  .input-group, .input-group-col, .select-group
     display: flex
     .addon-info + input
       border-left-color: transparent
-    input
+    input, select
       flex-grow: 1
   .input-group-col
     flex-direction: column
@@ -68,9 +36,8 @@
     display: flex
     flex-direction: row
     flex-wrap: wrap
-    align-items: stretch
+    align-items: flex-start
   .form-group-inline
-    box-sizing: inherit
     flex-direction: row
     justify-content: space-between
     align-items: center
@@ -79,33 +46,29 @@
   .error
     border: 1px solid red
   .error-message
-    box-sizing: border-box
-    height: auto
-    overflow: hidden
     flex-basis: 100%
     flex-grow: 1
     color: red
     background: transparentize(red, .92)
     border-left: 3px red solid
-    margin: 5px 0 10px 10px
+    margin: 5px 0 10px 0
     padding: 5px 10px
-  .checkbox
+  .checkbox, .radio, .radio-inline, .checkbox-inline
     margin: 10px
     flex-grow: 1
     display: flex
-    align-items: center
+    align-items: flex-start
     flex-wrap: wrap
     input
       display: none
 
     label
-      flex-grow: 1
       font-weight: 400
       display: inline-block
       cursor: pointer
       position: relative
       padding-left: 25px
-
+      margin-left: 10px
     label:before
       content: ""
       width: 16px
@@ -117,14 +80,24 @@
       top: 4px
       background-color: white
       border: 1px solid transparentize(black, .8)
+    input[type=radio]:checked + label:before
+      content: "\2022"
+      font-weight: 700
+      color: black
+      text-align: center
+      line-height: 18px
+      font-size: 36px
     input[type=checkbox]:checked + label:before
       content: "\2713"
       font-weight: 700
       color: black
       text-align: center
       line-height: 15px
-
-
+  .radio, .radio-inline
+    label:before
+      border-radius: 100%
+  .radio, .checkbox
+    flex-direction: column
 
 
 .form-inline

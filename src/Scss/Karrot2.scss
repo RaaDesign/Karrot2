@@ -8,7 +8,9 @@
 [class*="fontawesome-"]:before {
   font-family: "FontAwesome", sans-serif;
 }
-
+* {
+  box-sizing: border-box;
+}
 @import "grid.scss";
-@import "style.scss";
 @import "classes.scss";
+@import "style.scss";

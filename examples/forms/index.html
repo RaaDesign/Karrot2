@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="eng">
 <head>
 
   <!-- Basic Page Needs
@@ -27,128 +27,168 @@
 </head>
 <body>
   <div class="container">
-  <!--  <form class="form-inline form-medium">
+    <form id="inline_login" class="form-inline form-medium" action="index.html" method="post">
       <div class="form-group">
-        <label for="login">Login</label>
-        <input type="text" id="login" placeholder="">
+        <label for="inline_login_login">Login</label>
+        <input type="text" id="inline_login_login" placeholder="" >
       </div>
 
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="">
+        <label for="inline_login_password">Password</label>
+        <input type="password" id="inline_login_password" placeholder="" >
       </div>
-      <button type="button" name="button" class="btn-primary-bg">Login</button>
+      <button type="submit" name="button" class="btn-primary-bg">Login</button>
     </form>
 
-    <form class="form form-medium">
+    <form id="register" class="form form-medium" action="index.html" method="post">
       <div class="form-group">
-        <label for="login">Podaj swoj login</label>
-        <input type="text" id="login" placeholder="">
+        <label for="register_login">Podaj swoj login</label>
+        <input type="text" id="register_login" placeholder="" minlength=7 pattern="^[A-Za-z0-9]+$" required>
       </div>
 
       <div class="form-group">
-        <label for="email">Podaj swoj email</label>
-        <input type="text" id="email" placeholder="">
+        <label for="register_email">Podaj swoj email</label>
+        <input type="email" id="register_email" placeholder="" required>
       </div>
       <div class="inline-inputs">
         <div class="form-group">
-          <label for="pass">Wpisz haslo</label>
-          <input type="password" class="form-control" id="pass" placeholder="">
+          <label for="register_pass">Wpisz haslo</label>
+          <input type="password" class="form-control" id="register_pass" placeholder="" minlenght=7 required>
         </div>
         <div class="form-group">
-          <label for="pass2">Powtorz haslo</label>
-          <input type="password" id="pass2" placeholder="">
+          <label for="register_pass2">Powtorz haslo</label>
+          <input type="password" id="register_pass2" placeholder="" repeat="register_pass" repeatText="Pass are not the same."  required>
         </div>
       </div>
 
       <button type="submit" class="btn-primary btn-large">Zarejestruj</button>
     </form>
 
-    <form class="form form-medium">
+    <form id="register2" class="form form-medium" action="index.html" method="post">
       <div class="form-group">
-        <label for="login" class="hide">Podaj swoj login</label>
-        <input type="text" id="login" placeholder="Your login">
+        <label for="register2_login" class="hide">Podaj swoj login</label>
+        <input type="text" id="register2_login" placeholder="Your login" minlength=7 pattern="^[A-Za-z0-9]+$" required>
       </div>
 
       <div class="form-group">
-        <label for="email" class="hide">Podaj swoj email</label>
-        <input type="text" id="email" placeholder="Your email">
+        <label for="register2_email" class="hide">Podaj swoj email</label>
+        <input type="email" id="register2_email" placeholder="Your email" required="">
       </div>
       <div class="inline-inputs">
         <div class="form-group">
-          <label for="pass" class="hide">Wpisz haslo</label>
-          <input type="password" class="form-control" id="pass" placeholder="Your password">
+          <label for="register2_pass" class="hide">Wpisz haslo</label>
+          <input type="password" class="form-control" id="register2_pass" placeholder="Your password" minlenght=7 required>
         </div>
         <div class="form-group">
-          <label for="pass2" class="hide">Powtorz haslo</label>
-          <input type="password" id="pass2" placeholder="Repeat your password">
+          <label for="register2_pass2" class="hide">Powtorz haslo</label>
+          <input type="password" id="register2_pass2" placeholder="Repeat your password" repeat="register2_pass" repeatText="Pass are not the same." required>
         </div>
       </div>
       <div class="checkbox">
-        <input id="check1" type="checkbox" name="check" value="check1">
-        <label for="check1">I accept Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, perferendis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus dolorum, accusantium qui.</label>
+        <input id="register2_check1" type="checkbox" name="check" value="register2_check1" required>
+        <label for="register2_check1">I accept Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, perferendis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus dolorum, accusantium qui.</label>
       </div>
       <button type="submit" class="btn-primary-bg btn-large">Zarejestruj</button>
     </form>
 
-    <form class="form-inline form-medium">
+    <form id="login_inline2" class="form-inline form-medium" action="index.html" method="post">
       <div class="form-group">
-        <label for="login" class="hide">Podaj swoj login</label>
+        <label for="login_inline2_login" class="hide">Podaj swoj login</label>
         <div class="input-group">
           <div class="addon-info"><span class="fontawesome-envelope-alt"></span></div>
-          <input type="text" id="login" placeholder="Your login">
+          <input type="text" id="login_inline2_login" placeholder="Your login" required>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="pass" class="hide">Password</label>
+        <label for="login_inline2_pass" class="hide">Password</label>
         <div class="input-group">
           <div class="addon-info"><span class="fontawesome-key"></span></div>
-          <input type="password" id="pass" placeholder="Your password" required>
+          <input type="password" id="login_inline2_pass" placeholder="Your password" required>
         </div>
       </div>
-      <button type="button" name="button" class="btn-info-bg">Login</button>
+      <button type="submit" name="button" class="btn-info-bg">Login</button>
     </form>
-!-->
-    <form class="form form-medium" action="index.html" method="post">
+
+    <form id="register3" class="form form-medium" action="index.html" method="post">
       <div class="form-group">
-        <label for="login" class="hide">Podaj swoj login</label>
+        <label for="register3_login" class="hide">Podaj swoj login</label>
         <div class="input-group">
           <div class="addon-info"><span class="fontawesome-envelope-alt"></span></div>
-          <input type="text" id="login" placeholder="Your login" required>
+          <input type="text" id="register3_login" placeholder="Your login" minlength=7 pattern="^[A-Za-z0-9]+$" required>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="login" class="hide">Podaj swoj email</label>
+        <label for="register3_email" class="hide">Podaj swoj email</label>
         <div class="input-group">
           <div class="addon-info"><span class="fontawesome-envelope-alt"></span></div>
-          <input type="email" id="email" placeholder="Your e-mail" required>
+          <input type="email" id="register3_email" placeholder="Your e-mail" required>
         </div>
       </div>
       <div class="inline-inputs">
         <div class="form-group">
-          <label for="pass" class="hide">Podaj swoj login</label>
+          <label for="register3_pass" class="hide">Podaj swoj login</label>
           <div class="input-group">
             <div class="addon-info"><span class="fontawesome-key"></span></div>
-            <input type="password" id="pass" placeholder="Your password" required>
+            <input type="password" id="register3_pass" placeholder="Your password" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="pass2" class="hide">Podaj swoj login</label>
+          <label for="register3_pass2" class="hide">Podaj swoj login</label>
           <div class="input-group">
             <div class="addon-info"><span class="fontawesome-key"></span></div>
-            <input type="password" id="pass2" placeholder="Repeat your password" required>
+            <input type="password" id="register3_pass2" repeat="register3_pass" repeatText="Pass are not the same." placeholder="Repeat your password" disabled>
           </div>
         </div>
 
 
       </div>
       <div class="checkbox">
-        <input id="check2" type="checkbox" name="check" value="check2" required>
-        <label for="check2">Akceptuję raka Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora illum tempore quasi, quaerat voluptate quo, vero sed nobis.</label>
+        <input id="register3_check2" type="checkbox" name="check" value="check2" required>
+        <label for="register3_check2">Akceptuję raka Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora illum tempore quasi, quaerat voluptate quo, vero sed nobis.</label>
       </div>
+
       <button type="submit" class="btn-info-bg btn-large">Register now</button>
+    </form>
+    <form class="form form-medium" action="index.html" method="post">
+      <div class="radio">
+        <input id="register3_radio1" type="radio" name="radioOption" value="check2" required>
+        <label for="register3_radio1">Option 1.</label>
+        <input id="register3_radio2" type="radio" name="radioOption" value="check2" required>
+        <label for="register3_radio2">Option 2.</label>
+        <input id="register3_radio3" type="radio" name="radioOption" value="check2" required>
+        <label for="register3_radio3">Option 3.</label>
+      </div>
+
+      <div class="radio-inline">
+        <input id="register3_radio12" type="radio" name="radioOption" value="check2" required>
+        <label for="register3_radio12">Option 1.</label>
+        <input id="register3_radio22" type="radio" name="radioOption" value="check2" required>
+        <label for="register3_radio22">Option 2.</label>
+        <input id="register3_radio32" type="radio" name="radioOption" value="check2" required>
+        <label for="register3_radio32">Option 3.</label>
+      </div>
+      <div class="form-group">
+        <div class="select-group">
+          <div class="addon-info"><span class="fontawesome-key"></span></div>
+          <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="addon-info"><span class="fontawesome-key"></span></div>
+          <input id="startdate" name="startdate" min="2012-01-01"  type="date">
+        </div>
+      </div>
+
     </form>
     <p>
       rak

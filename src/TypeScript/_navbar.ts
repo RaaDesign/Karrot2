@@ -6,7 +6,7 @@ module Karrot2 {
 
     constructor() {
       this.nav = document.getElementsByTagName('nav')[0];
-
+      if(this.nav == null) return;
 
       this.mobileBtn = <HTMLElement>this.nav.getElementsByClassName('mobile-btn')[0];
       this.links = <HTMLElement>this.nav.getElementsByClassName('links')[0];

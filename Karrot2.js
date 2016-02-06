@@ -19,23 +19,33 @@ var Karrot2;
                     event.preventDefault();
                 }
             });
-            var submitButton = $("button, input[type=submit]");
-            var inputs = $(form).children("input");
-            $("input").on("click", function (e) {
+            var submitButton = $(form).find("button:not([type=button]), input[type=submit]");
+            var inputs = $(form).find("input");
+            document.getElementById("pass2");
+            $(inputs).on("click", function (e) {
+                console.log("raczek");
                 var el = $(e.currentTarget);
                 el.removeClass("error");
                 el.closest(".form-group, .checkbox").children(".error-message").remove();
             });
             $(submitButton).click(function (event) {
-                var invalidFields = $(":invalid"), errorMessages = $(".error-message"), parent;
+                $(form).find('[repeat]').each(function (id, item) {
+                    item.setCustomValidity($(item).attr("repeatText"));
+                    var repID = $(item).attr("repeat");
+                    var repItem = document.getElementById(repID);
+                    console.log(repItem);
+                    if (item.value === repItem.value) {
+                        console.log(repItem.value);
+                        item.setCustomValidity('');
+                    }
+                });
+                var invalidFields = $(form).find(":invalid"), errorMessages = $(form).find(".error-message"), parent;
                 errorMessages.each(function (id, item) {
                     $(item).remove();
                 });
                 invalidFields.each(function (id, item) {
                     parent = $(item).closest(".form-group, .checkbox");
                     $(parent).append("<div class='error-message'>" + item.validationMessage + "</div>");
-                    $(item).addClass("error");
-                    item.value = "";
                 });
             });
         };
@@ -49,6 +59,8 @@ var Karrot2;
         function NavBar() {
             var _this = this;
             this.nav = document.getElementsByTagName('nav')[0];
+            if (this.nav == null)
+                return;
             this.mobileBtn = this.nav.getElementsByClassName('mobile-btn')[0];
             this.links = this.nav.getElementsByClassName('links')[0];
             $(this.mobileBtn).on("click", function () {
