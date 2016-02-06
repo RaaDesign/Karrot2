@@ -1,0 +1,90 @@
+
+@import "variables.scss";
+//Grid
+@mixin makeGrid($minwidth, $dir, $cont-width) {
+  @if $minwidth == 0 {
+    .container {
+      width: $cont-width;
+    }
+    .col-#{$dir}-auto {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    @for $i from 1 through 12 {
+      .col-#{$dir}-#{$i} {
+        flex-basis: $i / 12 * 100%;
+        flex-grow: 0;
+      }
+      .order-#{$dir}-#{$i} {
+        order: #{$i};
+      }
+    }
+  }
+  @else {
+    @media screen and (min-width: $minwidth) {
+      .container {
+        width: $cont-width;
+      }
+      .col-#{$dir}-auto {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+      @for $i from 1 through 12 {
+        .col-#{$dir}-#{$i} {
+          flex-basis: $i / 12 * 100%;
+          flex-grow: 0;
+        }
+        .order-#{$dir}-#{$i} {
+          order: #{$i};
+        }
+      }
+    }
+  }
+}
+//Show/Hide
+@mixin Show($width, $dir) {
+  .#{$dir}-show {
+    @media screen and (min-width: $width) {
+      display: none;
+    }
+  }
+}
+@mixin Hide($width, $dir) {
+  .#{$dir}-hide {
+    @media screen and (max-width: $width) {
+      display: none;
+    }
+  }
+}
+
+//Buttons
+@mixin makeButton($name, $clr1, $clr2) {
+  .btn#{$name} {
+    border: 1px solid $clr1;
+    color: $clr1;
+    background: transparent;
+    &:hover {
+      color: $clr2;
+      background: $clr1;
+    }
+  }
+  .btn#{$name}-bg {
+    border: 1px solid $clr1;
+    background: $clr1;
+    color: $clr2;
+    &:hover {
+      background: darken($clr1, 10%);
+    }
+  }
+  .addon#{$name} {
+    color: $clr2;
+    background: $clr1;
+    height: inherit;
+    padding: 0 3px;
+    font-size: 120%;
+    min-width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

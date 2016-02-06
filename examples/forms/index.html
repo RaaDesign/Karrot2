@@ -149,8 +149,36 @@
         <label for="register3_check2">Akceptuję raka Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora illum tempore quasi, quaerat voluptate quo, vero sed nobis.</label>
       </div>
 
-      <button type="submit" class="btn-info-bg btn-large">Register now</button>
+      <button type="submit" class="btn-info-bg btn-large button-full">Register now</button>
     </form>
+
+    <form id="register4" class="form form-medium" action="index.html" method="post">
+      <div class="form-group-inline">
+        <label for="register4_login">Podaj swoj login</label>
+        <input type="text" id="register2_login" placeholder="Your login" minlength=7 pattern="^[A-Za-z0-9]+$" required>
+      </div>
+
+      <div class="form-group-inline">
+        <label for="register4_email">Podaj swoj email</label>
+        <input type="email" id="register4_email" placeholder="Your email" required="">
+      </div>
+
+        <div class="form-group-inline">
+          <label for="register4_pass">Wpisz haslo</label>
+          <input type="password" class="form-control" id="register4_pass" placeholder="Your password" minlenght=7 required>
+        </div>
+        <div class="form-group-inline">
+          <label for="register4_pass2">Powtorz haslo</label>
+          <input type="password" id="register4_pass2" placeholder="Repeat your password" repeat="register4_pass" repeatText="Pass are not the same." required>
+        </div>
+
+      <div class="checkbox-inline">
+        <input id="register4_check1" type="checkbox" name="check" value="register4_check1" required>
+        <label for="register4_check1">I accept Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, perferendis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus dolorum, accusantium qui.</label>
+      </div>
+      <button type="submit" class="btn-primary-bg btn-large">Zarejestruj</button>
+    </form>
+
     <form class="form form-medium" action="index.html" method="post">
       <div class="radio">
         <input id="register3_radio1" type="radio" name="radioOption" value="check2" required>
@@ -190,6 +218,7 @@
       </div>
 
     </form>
+
     <p>
       rak
     </p>

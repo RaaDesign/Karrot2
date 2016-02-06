@@ -1,34 +1,15 @@
 //main: Karrot2.scss
 @import "variables.scss";
+@import "functions.scss";
 
-@mixin Show($width, $dir) {
-  .#{$dir}-show {
-    @media screen and (min-width: $width) {
-      display: none;
-    }
-  }
-}
+
 
 @include Show($to-xs, "xs");
-
 @include Show($to-sm, "sm");
-
 @include Show($to-md, "md");
-
-@mixin Hide($width, $dir) {
-  .#{$dir}-hide {
-    @media screen and (max-width: $width) {
-      display: none;
-    }
-  }
-}
-
 @include Hide($to-xs, "xs");
-
 @include Hide($to-sm, "sm");
-
 @include Hide($to-md, "md");
-
 .hide {
   display: none;
 }

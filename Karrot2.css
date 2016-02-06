@@ -405,7 +405,7 @@ th {
 
 .container, .container-fluid {
   position: relative;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -522,7 +522,7 @@ th {
 }
 
 .container {
-  width: 100%;
+  width: 95%;
 }
 
 .col-xs-auto {
@@ -1395,6 +1395,81 @@ body {
   color: #222222;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: -0.1rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.1rem;
+}
+
+h3 {
+  font-size: 3rem;
+  line-height: 1.3;
+  letter-spacing: -0.1rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+  line-height: 1.35;
+  letter-spacing: -0.08rem;
+}
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -0.05rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 4.2rem;
+  }
+  h3 {
+    font-size: 3.6rem;
+  }
+  h4 {
+    font-size: 3rem;
+  }
+  h5 {
+    font-size: 2.4rem;
+  }
+  h6 {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: #1eaedb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0fa0ce;
+}
+
 nav {
   position: fixed;
   width: 100%;
@@ -1499,81 +1574,6 @@ nav .container ul li:last-of-type {
   nav .container ul li {
     border: 0;
   }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 2rem;
-}
-
-h1 {
-  font-size: 4rem;
-  line-height: 1.2;
-  letter-spacing: -0.1rem;
-}
-
-h2 {
-  font-size: 3.6rem;
-  line-height: 1.25;
-  letter-spacing: -0.1rem;
-}
-
-h3 {
-  font-size: 3rem;
-  line-height: 1.3;
-  letter-spacing: -0.1rem;
-}
-
-h4 {
-  font-size: 2.4rem;
-  line-height: 1.35;
-  letter-spacing: -0.08rem;
-}
-
-h5 {
-  font-size: 1.8rem;
-  line-height: 1.5;
-  letter-spacing: -0.05rem;
-}
-
-h6 {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  letter-spacing: 0;
-}
-
-@media screen and (min-width: 768px) {
-  h1 {
-    font-size: 5rem;
-  }
-  h2 {
-    font-size: 4.2rem;
-  }
-  h3 {
-    font-size: 3.6rem;
-  }
-  h4 {
-    font-size: 3rem;
-  }
-  h5 {
-    font-size: 2.4rem;
-  }
-  h6 {
-    font-size: 1.5rem;
-  }
-}
-
-p {
-  margin-top: 0;
-}
-
-a {
-  color: #1eaedb;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #0fa0ce;
 }
 
 [class^="btn-"] {
@@ -1887,7 +1887,6 @@ a:hover {
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  box-sizing: border-box;
 }
 
 .btn-large {
@@ -1898,4 +1897,276 @@ a:hover {
 .btn-small {
   padding: 2px;
   min-width: 80px;
+}
+
+.button-full {
+  -webkit-align-self: stretch !important;
+      -ms-flex-item-align: stretch !important;
+          align-self: stretch !important;
+}
+
+.form, .form-inline {
+  margin: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form label, .form-inline label {
+  font-weight: bold;
+}
+
+.form input, .form select, .form-inline input, .form-inline select {
+  padding: 0 10px;
+  height: 34px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.form button, .form-inline button {
+  margin: 5px 10px;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+}
+
+.form .form-group, .form .form-group-inline, .form-inline .form-group, .form-inline .form-group-inline {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5px 10px;
+}
+
+.form .input-group, .form .input-group-col, .form .select-group, .form-inline .input-group, .form-inline .input-group-col, .form-inline .select-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form .input-group .addon-info + input, .form .input-group-col .addon-info + input, .form .select-group .addon-info + input, .form-inline .input-group .addon-info + input, .form-inline .input-group-col .addon-info + input, .form-inline .select-group .addon-info + input {
+  border-left-color: transparent;
+}
+
+.form .input-group input, .form .input-group select, .form .input-group-col input, .form .input-group-col select, .form .select-group input, .form .select-group select, .form-inline .input-group input, .form-inline .input-group select, .form-inline .input-group-col input, .form-inline .input-group-col select, .form-inline .select-group input, .form-inline .select-group select {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.form .input-group-col, .form-inline .input-group-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form .inline-inputs, .form-inline .inline-inputs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.form .form-group-inline, .form-inline .form-group-inline {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.form .form-group-inline label, .form-inline .form-group-inline label {
+  margin-right: 5px;
+  -webkit-flex-basis: 20%;
+      -ms-flex-preferred-size: 20%;
+          flex-basis: 20%;
+}
+
+.form .form-group-inline input, .form-inline .form-group-inline input {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.form .error, .form-inline .error {
+  border: 1px solid red;
+}
+
+.form .error-message, .form-inline .error-message {
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: red;
+  background: rgba(255, 0, 0, 0.08);
+  border-left: 3px red solid;
+  margin: 5px 0 10px 0;
+  padding: 5px 10px;
+}
+
+.form .checkbox, .form .radio, .form .radio-inline, .form .checkbox-inline, .form-inline .checkbox, .form-inline .radio, .form-inline .radio-inline, .form-inline .checkbox-inline {
+  margin: 10px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.form .checkbox input, .form .radio input, .form .radio-inline input, .form .checkbox-inline input, .form-inline .checkbox input, .form-inline .radio input, .form-inline .radio-inline input, .form-inline .checkbox-inline input {
+  display: none;
+}
+
+.form .checkbox label, .form .radio label, .form .radio-inline label, .form .checkbox-inline label, .form-inline .checkbox label, .form-inline .radio label, .form-inline .radio-inline label, .form-inline .checkbox-inline label {
+  font-weight: 400;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+}
+
+.form .checkbox label:before, .form .radio label:before, .form .radio-inline label:before, .form .checkbox-inline label:before, .form-inline .checkbox label:before, .form-inline .radio label:before, .form-inline .radio-inline label:before, .form-inline .checkbox-inline label:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.form .checkbox input[type=radio]:checked + label:before, .form .radio input[type=radio]:checked + label:before, .form .radio-inline input[type=radio]:checked + label:before, .form .checkbox-inline input[type=radio]:checked + label:before, .form-inline .checkbox input[type=radio]:checked + label:before, .form-inline .radio input[type=radio]:checked + label:before, .form-inline .radio-inline input[type=radio]:checked + label:before, .form-inline .checkbox-inline input[type=radio]:checked + label:before {
+  content: "\2022";
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  line-height: 18px;
+  font-size: 36px;
+}
+
+.form .checkbox input[type=checkbox]:checked + label:before, .form .radio input[type=checkbox]:checked + label:before, .form .radio-inline input[type=checkbox]:checked + label:before, .form .checkbox-inline input[type=checkbox]:checked + label:before, .form-inline .checkbox input[type=checkbox]:checked + label:before, .form-inline .radio input[type=checkbox]:checked + label:before, .form-inline .radio-inline input[type=checkbox]:checked + label:before, .form-inline .checkbox-inline input[type=checkbox]:checked + label:before {
+  content: "\2713";
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  line-height: 15px;
+}
+
+.form .radio label:before, .form .radio-inline label:before, .form-inline .radio label:before, .form-inline .radio-inline label:before {
+  border-radius: 100%;
+}
+
+.form .radio-inline label + input + label, .form .checkbox-inline label + input + label, .form-inline .radio-inline label + input + label, .form-inline .checkbox-inline label + input + label {
+  margin-left: 10px;
+}
+
+.form .radio, .form .checkbox, .form-inline .radio, .form-inline .checkbox {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-inline {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form-inline button {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+}
+
+.form-small {
+  max-width: 466px;
+}
+
+.form-medium {
+  max-width: 678px;
+}
+
+.form-large {
+  max-width: 860px;
 }

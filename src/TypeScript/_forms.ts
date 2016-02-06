@@ -37,7 +37,7 @@ module Karrot2 {
         console.log("raczek")
         var el = $(e.currentTarget);
         el.removeClass("error");
-        el.closest(".form-group, .checkbox").children(".error-message").remove();
+        el.closest(".form-group, .checkbox, .form-group-inline").children(".error-message").remove();
 
       });
 
@@ -62,7 +62,7 @@ module Karrot2 {
           $(item).remove();
         });
         invalidFields.each((id, item) => {
-          parent = $(item).closest(".form-group, .checkbox");
+          parent = $(item).closest(".form-group, .checkbox, .form-group-inline, .checkbox-inline");
           $(parent).append( "<div class='error-message'>"+item.validationMessage+"</div>");
         }) ;
 
