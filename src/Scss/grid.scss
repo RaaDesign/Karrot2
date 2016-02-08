@@ -4,7 +4,7 @@
 //BASE
 .container, .container-fluid {
   position: relative;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
 
@@ -16,7 +16,8 @@
 
 //ROW
 .row {
-  width: 100%;
+  margin-left: -20px !important;
+  margin-right: -20px !important;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -37,7 +38,7 @@
 
 ////Columns Definitions
 [class^="col-"] {
-  padding: 10px 0;
+  padding: 10px 20px;
   order: 6;
   box-sizing: border-box;
 }

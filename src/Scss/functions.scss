@@ -12,7 +12,7 @@
     }
     @for $i from 1 through 12 {
       .col-#{$dir}-#{$i} {
-        flex-basis: $i / 12 * 100%;
+        flex-basis: $i / 12 * 100%-2%;
         flex-grow: 0;
       }
       .order-#{$dir}-#{$i} {
@@ -31,7 +31,7 @@
       }
       @for $i from 1 through 12 {
         .col-#{$dir}-#{$i} {
-          flex-basis: $i / 12 * 100%;
+          flex-basis: $i / 12 * 100%-2%;
           flex-grow: 0;
         }
         .order-#{$dir}-#{$i} {
@@ -83,6 +83,17 @@
     padding: 0 3px;
     font-size: 120%;
     min-width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .addon#{$name}-big {
+    color: $clr2;
+    background: $clr1;
+    height: inherit;
+    padding: 0 8px;
+    font-size: 140%;
+    min-width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
