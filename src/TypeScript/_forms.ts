@@ -34,7 +34,6 @@ module Karrot2 {
 
       document.getElementById("pass2")
       $(inputs).on("click", (e) => {
-        console.log("raczek")
         var el = $(e.currentTarget);
         el.removeClass("error");
         el.closest(".form-group, .checkbox, .form-group-inline").children(".error-message").remove();
@@ -47,10 +46,8 @@ module Karrot2 {
 
           var repID = $(item).attr("repeat");
           var repItem = <Element>document.getElementById(repID);
-          console.log(repItem);
           if(item.value===repItem.value)
           {
-            console.log(repItem.value);
             item.setCustomValidity('');
           }
         });

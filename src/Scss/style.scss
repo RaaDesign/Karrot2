@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   color: #222222;
+  overflow-x: hidden;
 }
 //FONTS
 h1, h2, h3, h4, h5, h6 {
@@ -104,7 +105,7 @@ nav {
     > span {
       cursor: pointer;
     }
-    ul {
+    > ul {
       border-top: 1px solid transparentize(black, 0.7);
       flex-basis: 100%;
       display: flex;
@@ -112,15 +113,12 @@ nav {
       align-items: stretch;
       padding: 0;
       margin: 0;
-      li {
+      > li {
         border-bottom: 1px solid transparentize(black, 0.8);
         display: inline-flex;
         white-space: nowrap;
         padding: 15px 10px;
         margin: 0 10px;
-        &:hover {
-          background: transparentize(black, .96);
-        }
         &:last-of-type {
           border-bottom: 1px solid transparent;
         }
@@ -131,12 +129,12 @@ nav {
     position: relative;
     border-bottom: 1px solid transparent;
     .container, .container-fluid {
-      ul {
+      > ul {
         border: 0;
         flex-basis: 0;
         justify-content: center;
         flex-direction: row;
-        li {
+        > li {
           border: 0;
           flex-grow: 1;
 
@@ -177,7 +175,7 @@ nav {
 }
 
 .btn-small {
-  padding: 2px;
+  padding: 0 2px;
   min-width: 80px;
   height: 24px
 }

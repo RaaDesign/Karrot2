@@ -23,7 +23,6 @@ var Karrot2;
             var inputs = $(form).find("input");
             document.getElementById("pass2");
             $(inputs).on("click", function (e) {
-                console.log("raczek");
                 var el = $(e.currentTarget);
                 el.removeClass("error");
                 el.closest(".form-group, .checkbox, .form-group-inline").children(".error-message").remove();
@@ -33,9 +32,7 @@ var Karrot2;
                     item.setCustomValidity($(item).attr("repeatText"));
                     var repID = $(item).attr("repeat");
                     var repItem = document.getElementById(repID);
-                    console.log(repItem);
                     if (item.value === repItem.value) {
-                        console.log(repItem.value);
                         item.setCustomValidity('');
                     }
                 });
@@ -72,7 +69,6 @@ var Karrot2;
             this.toggleMenu(500);
         };
         NavBar.prototype.checkMenu = function () {
-            console.log("checking");
             Karrot2.Core.isMobile() == true ? this.showMenu(0) : this.hideMenu(0);
         };
         NavBar.prototype.showMenu = function (time) {
@@ -98,12 +94,9 @@ var Karrot2;
             $(window).on("resize", function () {
                 _this.nav.checkMenu();
             });
-            $("button").on("click", function () {
-                console.log("but clisked");
-            });
         }
         Core.isMobile = function () {
-            return $(window).width() > 767 ? true : false;
+            return $(window).width() > 750 ? true : false;
         };
         return Core;
     }());

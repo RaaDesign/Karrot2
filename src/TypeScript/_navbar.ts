@@ -22,7 +22,6 @@ module Karrot2 {
       this.toggleMenu(500);
     }
     checkMenu():void {
-      console.log("checking");
       Core.isMobile() == true ? this.showMenu(0):this.hideMenu(0);
     }
     showMenu(time:number):void {

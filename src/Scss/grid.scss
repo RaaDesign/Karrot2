@@ -19,11 +19,17 @@
   margin-left: -20px !important;
   margin-right: -20px !important;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
-  align-content: center;
+  align-content: flex-start;
+  flex-direction: row;
+}
+.row:not(.no-wrap) {
+  flex-direction: column;
+  @media screen and (min-width: $from-sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 //ROW -- FLEX FUNCTIONS
 .row.reverse {flex-direction: row-reverse;}
@@ -41,8 +47,6 @@
   padding: 10px 20px;
   order: 6;
   box-sizing: border-box;
-}
-[class^="col-"] {
   flex-basis: 100%;
 }
 @include makeGrid(0, "xs", 95%);

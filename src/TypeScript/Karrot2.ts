@@ -9,13 +9,10 @@ module Karrot2 {
       $(window).on("resize", () => {
         this.nav.checkMenu();
       });
-      $("button").on("click", () => {
-        console.log("but clisked");
-      });
     }
 
     public static isMobile():boolean {
-      return $(window).width() > 767 ? true : false;
+      return $(window).width() > 750 ? true : false;
     }
   }
   window.onload = function() {
